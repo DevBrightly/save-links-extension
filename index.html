@@ -46,6 +46,17 @@
     font-weight: 700;
   }
 
+  button:last-child {
+    background: transparent;
+    border: 1px rgb(47, 113, 255) solid;
+    color: rgb(47, 113, 255);
+  }
+
+  .btn {
+    display: flex;
+    gap: 8px;
+  }
+
   input {
     width: 100%;
     background-color: rgb(207, 226, 250);
@@ -57,7 +68,10 @@
 <body>
   <main>
     <input id="input-el" type="text">
-    <button id="input-btn">Save</button>
+    <div class="btn">
+      <button id="input-btn">Save</button>
+      <button id="delete-btn">Delete All</button>
+    </div>
     <ul></ul>
   </main>
 
