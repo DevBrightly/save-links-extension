@@ -69,9 +69,9 @@ function renderItems() {
 
 function clearItems() {
   if (inputArray && inputArray.length > 0) {
-    inputArray = [];
     ulEl.innerHTML = "";
-    localStorage.clear("myItems");
+    localStorage.removeItem("myItems");
+    inputArray = [];
   }
 }
 
