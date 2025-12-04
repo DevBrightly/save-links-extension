@@ -1,7 +1,10 @@
 const inputEl = document.getElementById('input-el');
 const inputBtn = document.getElementById('input-btn');
-const deleteBtn = document.getElementById('delete-btn');
 const ulEl = document.querySelector('ul');
+const deleteBtn = document.getElementById('delete-btn');
+const deleteOverlay = document.querySelector('.delete-overlay');
+const deleteCancel = document.getElementById('delete-cancel');
+const deleteConfirm = document.getElementById('delete-confirm');
 let inputArray = [];
 const fromLocalStorage = JSON.parse(localStorage.getItem("myItems"));
 
@@ -19,7 +22,19 @@ inputBtn.addEventListener('click', () => {
   renderItems() // Invoke function when clicked
 })
 
-deleteBtn.addEventListener(' ', clearItems);
+// DELETE LOGIC
+deleteBtn.addEventListener('click', () => {
+  deleteOverlay.style.display = "flex";
+});
+
+deleteCancel.addEventListener('click', () => {
+  deleteOverlay.style.display = "none";
+});
+
+deleteConfirm.addEventListener('click', () => {
+  clearItems();
+  deleteOverlay.style.display = "none";
+});
 
 // Function to render the content of the array in the DOM/Browser
 function renderItems() {
