@@ -40,14 +40,16 @@
 
   button {
     padding: 8px 12px;
+    border-radius: 8px;
     background-color: rgb(47, 113, 255);
     border: 1px white solid;
-    color: rgb(0, 0, 0);
+    /* color: rgb(0, 0, 0); */
+    color: white;
     font-weight: 700;
   }
 
-  button:last-child {
-    background: transparent;
+  button.secondary-btn {
+    background: white;
     border: 1px rgb(47, 113, 255) solid;
     color: rgb(47, 113, 255);
   }
@@ -64,15 +66,53 @@
     padding: 8px;
   }
 
+  .delete-modal {
+    padding: 56px 56px;
+    max-width: 480px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+  }
+
+  .delete-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(000, 000, 000, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+  }
+
+
+
 </style>
 <body>
   <main>
     <input id="input-el" type="text">
     <div class="btn">
       <button id="input-btn">Save</button>
-      <button id="delete-btn">Delete All</button>
+      <button class="secondary-btn" id="delete-btn">Delete All</button>
     </div>
     <ul></ul>
+    
+    <div class="delete-overlay">
+      <div class="delete-modal">
+        <h3>Are you sure you want to delete all your links?</h3>
+        <div class="btn-actions">
+          <button id="delete-confirm">Yes, Delete All</button>
+          <button class="secondary-btn" id="delete-cancel">No, Cancel</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script src="./index.js"></script>
