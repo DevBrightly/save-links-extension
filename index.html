@@ -59,11 +59,16 @@
     gap: 8px;
   }
 
+  .warn {
+    background-color: red;
+  }
+
   input {
     width: 100%;
     background-color: rgb(207, 226, 250);
     height: 40px;
     padding: 8px;
+    border-radius: 100px;
   }
 
   .delete-modal {
@@ -75,6 +80,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid red;
     gap: 20px;
     z-index: 1000;
   }
@@ -100,8 +106,8 @@
     <input id="input-el" type="text">
     <div class="btn">
       <button id="input-btn">Save Input</button>
-      <button id="tab-btn">Save Tab</button>
-      <button class="secondary-btn" id="delete-btn">Delete All</button>
+      <button class="secondary-btn" id="tab-btn">Save Tab</button>
+      <button class="warn" id="delete-btn">Delete All</button>
     </div>
     <ul></ul>
 
@@ -109,7 +115,7 @@
       <div class="delete-modal">
         <h3>Are you sure you want to delete all your links?</h3>
         <div class="btn-actions">
-          <button id="delete-confirm">Yes, Delete All</button>
+          <button class="warn" id="delete-confirm">Yes, Delete All</button>
           <button class="secondary-btn" id="delete-cancel">No, Cancel</button>
         </div>
       </div>
