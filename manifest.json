@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Link Saver",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Save and manage your favorite links.",
   "action": {
     "default_icon": "logo.png",
@@ -11,5 +11,7 @@
   "icons": {
     "128": "logo.png"
   },    
-  "permissions": []
+  "permissions": [
+    "tabs"
+  ]
 }
